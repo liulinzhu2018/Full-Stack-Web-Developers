@@ -104,3 +104,33 @@ pseudo-elements
 - 模拟器来模拟各个设备展示web.
 - 浏览器上的模拟器 ctrl+shift+j 出来的左上角手机平板的图标。
 - https://developers.google.com/web/tools/chrome-devtools/shortcuts
+
+- 视角宽度 = 实际像素/像素比
+  * <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  * width-device-width 根据屏幕大小设置页面大小，放在html文件的<head></head>里面。  
+  * initial-scale=1 初始缩放比例，如果不设置为1的话，屏幕横过来，可能页面不会自适应屏幕。  
+  * https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag  
+
+- css允许元素溢出，可以设置相对宽度，来适应不同尺寸的屏幕（响应式设计）
+  * eg. 
+    img, embed,
+    object, video {
+	max-width: 100%;
+    }
+  * 如果width和max-width都存在的话，max-width会覆盖width的设置。
+  * 设置width:125px, 这个比任何屏幕都要小，所以不用自适应屏幕。
+
+- 按钮设置一般最好48px*48px，因为要考虑到手指的宽度大约10mm,也就是40px. 保证元素间留有空闲，最少两个点击的目标间有40px。
+  * nav, a, button {
+	min-width: 48px;
+	min-height:48px;
+  }
+  * 这种设置能够自适应屏幕（窗口？），采用width和height的设置无法适应屏幕大小。
+  * eg. 
+.nav a {
+  text-decoration: none;
+  color: #616161;
+  padding: 1.5em; /*内边距等于a标签的1.5倍*/
+}
+
+- 响应式设计，从最小窗口开始考虑，它是一门艺术而非科学。
