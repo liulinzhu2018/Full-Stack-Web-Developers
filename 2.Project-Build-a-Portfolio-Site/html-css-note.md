@@ -205,6 +205,9 @@ nav {
 - fron-size: 16px;
 - line-height: 1.2em;
 
+网站布局：
+https://developer.mozilla.org/zh-CN/docs/learn/HTML/Introduction_to_HTML/%E6%96%87%E4%BB%B6%E5%92%8C%E7%BD%91%E7%AB%99%E7%BB%93%E6%9E%84
+
 
 下周：
 project2中 课程9的第11个， 课程10的第10个，project2 的项目
