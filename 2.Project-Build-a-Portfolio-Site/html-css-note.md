@@ -59,7 +59,7 @@ html元素中的id在一个网页中是唯一的，class可以出现在多个htm
 - cMozilla Developer Network：https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
 - CSS Almanac： https://css-tricks.com/almanac/
 - https://www.cssmatic.com/box-shadow
-
+- css校验器： https://jigsaw.w3.org/css-validator/
 - border: 5px dashed salmon;
 - border-radius: 5px;
 - cursor: pointer;
