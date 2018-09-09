@@ -4,7 +4,8 @@ import psycopg2
 DBNAME = "news"
 FILENAME = "result.txt"
 
-sql_get_top_three_artciles = "select articles.title, count(*) as views from log \
+sql_get_top_three_artciles = "select articles.title, count(*) as views \
+from log \
 left join articles on log.path = concat('/article/', articles.slug) \
 where log.path <> '/' \
 group by articles.title \
@@ -35,7 +36,7 @@ def execute(sql):
 
 
 def write_file(file_name, res):
-    print (res)
+    print(res)
     file_object = open(file_name, 'a')
     file_object.write(res + '\n')
     file_object.close()
@@ -46,25 +47,26 @@ def main():
     top_articles = execute(sql_get_top_three_artciles)
     res = "1. What are the most popular three articles of all time?"
     write_file(FILENAME, res)
-    for article in top_articles:
-        res = '\"' + str(article[0]) + '\" -- ' + str(article[1]) + ' views'
+    for title, views in top_articles:
+        res = "\"{}\" -- {} views".format(title, views)
         write_file(FILENAME, res)
 
     # 2. Who are the most popular article authors of all time?
     top_authors = execute(sql_get_top_authors)
     res = "\n2. Who are the most popular article authors of all time?"
     write_file(FILENAME, res)
-    for author in top_authors:
-        res = author[0] + ' -- ' + str(author[1]) + ' views'
+    for author, views in top_authors:
+        res = "\"{}\" -- {} views".format(author, views)
         write_file(FILENAME, res)
 
     # 3. On which days did more than 1% of requests lead to errors?
     err_days = execute(sql_get_error_days)
     res = "\n3. On which days did more than 1% of requests lead to errors?"
     write_file(FILENAME, res)
-    for err in err_days:
-        res = err[0] + " -- " + str(err[1]) + "% errors"
+    for date, err in err_days:
+        res = "\"{}\" -- {} views".format(date, err)
         write_file(FILENAME, res)
+
 
 if __name__ == "__main__":
     main()
