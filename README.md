@@ -2,4 +2,4 @@
 
 - css检查 : https://jigsaw.w3.org/css-validator/validator
 - html检查 : https://validator.w3.org/nu/#textarea
-- python pep8检查： http://www.pep8online.com/checkresult
+- python pep8检查： http://www.pep8online.com/
