@@ -7,17 +7,19 @@
 header {
     min-width:96%;
     order:1;
-    margin-right:10px;
+    /*margin-right:10px;*/
     text-align:right;
     font-family:sans-serif;
 }
 
 h1 {
     font-size:2.3rem;
+    text-align:right;
 }
 
 h2 {
     font-size:1rem;
+    text-align:right;
 }
 
 .box {
@@ -59,7 +61,7 @@ h2 {
 .light_grey {
     /*background-color:lightgrey;*/
     width:100%;
-    min-height:20px;
+    min-height:100%;
     order:6;
 }
 
@@ -70,35 +72,30 @@ h2 {
     order:7;
 }
 
-.light_pink1 {
+.light_green {
     /*background-color:lightgreen;*/
     width:calc((100% - 20px) / 3);
     min-height:100%;
     order:8;
 }
 
-.light_pink2 {
+.light_seagreen {
     /*background-color:lightseagreen;*/
     width:calc((100% - 20px) / 3);
     min-height:100%;
     order:9;
 }
 
-.light_pink3 {
-    /*background-color:lightsalmon;*/
-    width:calc((100% - 20px) / 3);
-    order:10;
+@media screen and (min-width:500px) {
+    .light_seagreen{order:7;}
+    .light_green{order:8;}
+    .light_pink{order:9;}
 }
 
-.light_pink4 {
-    /*background-color:lightsalmon;*/
-    width:calc((100% - 20px) / 3);
-    order:11;
-}
-.light_pink5 {
-    /*background-color:lightsalmon;*/
-    width:calc((100% - 20px) / 3);
-    order:12;
+@media screen and (max-width:501px) {
+    .light_seagreen{order:9;}
+    .light_green{order:8;}
+    .light_pink{order:7;}
 }
 
 
@@ -111,8 +108,8 @@ h2 {
 
 .font2 {
     color:black;
-    text-align:center;
-    font-size:1.5rem;
+    text-align:right;
+    font-size:1rem;
 }
 
 .img1 {
