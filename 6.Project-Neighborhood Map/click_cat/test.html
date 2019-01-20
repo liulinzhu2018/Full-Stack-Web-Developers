@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+    
+    <img src = "C:\full-stack\6\click_cat\cat1.jpg" id = "my-cat">
+    <img src = "C:\full-stack\6\click_cat\cat2.jpg" id = "my-cat1">
+    
+    <p id = "cat_list">cat list</p>
+    <script>
+        // 1
+        /*
+        var count = 0;
+        var elem = document.getElementById('my-cat');
+        elem.addEventListener('click', function(){
+            count ++;
+            window.alert(count);
+        }, false);
+        */
+
+        // 2
+        /*
+        var count1 = 0;
+        var elem1 = document.getElementById('my-cat1');
+        elem1.addEventListener('click', function(){
+            count1 ++;
+            window.alert(count1);
+        }, false);
+        */
+
+        // 3
+        /*
+        var cats = ['my-cat', 'my-cat1', 'my-cat2', 'my-cat3', 'my-cat4'];
+        var counts = [0, 0];
+        for (var i = 0; i < cats.length; ++i)
+        {
+            let cat_id = cats[i];
+            let count = counts[i];
+            var elem = document.getElementById(cat_id);
+            elem.addEventListener('click', function(){
+                count ++;
+                window.alert(count);
+            }, false)
+        }
+        */
+
+        /*
+        var count = 0;
+        var elem = document.getElementById('my-cat');
+        $(elem).ready(function(){
+        $('my-cat').click(function() {
+            count ++;
+            window.open("count");
+        })
+        });*/
+        
+        // 4
+        var cats = ['cat', 'cat1', 'cat2', 'cat3', 'cat4'];
+        var counts = [0, 0, 0, 0, 0];
+        var nums = [1,2,3];
+        var html = '<ol>'
+        for (var i = 0; i < 5; ++i)
+        {
+            html += '<li>' + cats[i] + '</li>';
+            var elem = document.createElement('div');
+            var count = counts[i];
+                // var image = "C:\full-stack\6\click_cat\cat" + (i + 1) +".jpg";
+                // document.write("<img src=" + image + ">");
+
+            var num = nums[i];
+            elem.addEventListener('click', (function(numCopy) {
+                return function() {
+                    alert(numCopy);
+                };
+            })(num));
+
+            document.body.appendChild(elem);
+        }
+        html += '</ol>';
+
+        document.getElementById('cat_list').innerHTML = html;
+    </script>
+
+</body>
+</html>

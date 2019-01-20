@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>maps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/loc.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="options-box">
+        <h1>Find Your New NYC Home</h1>
+        <div>
+          <input data-bind="click: showMarkerAndList" type="button" value="Show Listings">
+          <input data-bind="click: hideMarkers" type="button" value="Hide Listings">
+        </div>
+        <hr>
+        <div>
+            <input data-bind="textInput: inputTitle" type="text" class="title_box" placeholder="Enter your favorite area!">
+            <input data-bind="click: locationList" type="button" value="filter">
+            <input data-bind="click: showWiki" type="button" value="wiki">
+        </div>
+        <hr>
+        <ul data-bind="foreach: locList">
+            <li data-bind="text: title, click: $parent.setLoc" class="mouse-hand"></li>
+        </ul>
+        <hr>
+        <div class="wikipedia-container">
+          <h3 id="wikipedia-header">Relevant Wikipedia Links</h3>
+          <ul data-bind="foreach: wikiList">
+            <li><a data-bind="text: title, attr: {href: url}"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="map"></div>
+    </div>
+
+    <script src="js/lib/knockout-3.2.0.js"></script>
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+
+    <script async defer
+    src=
+    "https://maps.googleapis.com/maps/api/js?key=AIzaSyCn9XQ5y0r2-Wzflnn0_fei-2SXm8qAu04&v=3&callback=initMap" onerror="alert('The map could not be loaded.')">
+    </script>
+
+  </body>
+</html>
